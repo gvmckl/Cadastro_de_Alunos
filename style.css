@@ -1,0 +1,41 @@
+/* Estilos CSS aqui */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+form label, form input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50; /* Verde escuro */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adicionando uma transição suave de cor */
+}
+
+button:hover {
+    background-color: #45a049; /* Tom mais claro de verde ao passar o mouse */
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
