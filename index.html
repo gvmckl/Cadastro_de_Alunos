@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Alunos</title>
-    <link rel="stylesheet" href="C:\Users\Admin\Desktop\MiniProjeto M2\style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cadastro de Alunos</h1>
+    <div class="container rounded-corners box-shadow">
+        <h1 class="text-center">Cadastro de Alunos</h1>
 
-    <div>
-        <h2>Novo Aluno</h2>
-        <form id="cadastro-form">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
-            
-            <label for="periodo">Período Letivo:</label>
-            <input type="text" id="periodo" required>
+        <div>
+            <h2>Novo Aluno</h2>
+            <form id="cadastro-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+                
+                <label for="periodo">Período Letivo:</label>
+                <input type="text" id="periodo" required>
 
-            <label for="matricula">Número de Matrícula:</label>
-            <input type="text" id="matricula" required>
+                <label for="matricula">Número de Matrícula:</label>
+                <input type="text" id="matricula" required>
 
-            <label for="email">Email Institucional:</label>
-            <input type="email" id="email" required>
+                <label for="email">Email Institucional:</label>
+                <input type="email" id="email" required>
 
-            <button type="submit">Cadastrar</button>
-        </form>
+                <button type="submit" class="cadastro">Cadastrar</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Alunos Cadastrados</h2>
+            <ul id="alunos-list">
+                <button type="button" class="button edit-button">Editar</button>
+                <button type="button" class="button delete-button">Excluir</button>
+
+
+            </ul>
+        </div>
     </div>
 
-    <div>
-        <h2>Alunos Cadastrados</h2>
-        <ul id="alunos-list">
-            <!-- Lista de alunos será gerada dinamicamente aqui -->
-        </ul>
-    </div>
+    <footer>
+        Copyright &copy;
+        <a href="https://github.com/gvmckl">gvmckl</a> <span class="heart">&#x2764;</span>
+        
 
-    <script src="C:\Users\Admin\Desktop\MiniProjeto M2\script.js"></script>
+    </footer>   
+
+    <script src="script.js"></script>
 </body>
 </html>

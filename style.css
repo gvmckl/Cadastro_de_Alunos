@@ -1,41 +1,114 @@
-/* Estilos CSS aqui */
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins";
+    background-color: #611879;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffe9bc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 h1 {
     text-align: center;
+    color: #000000;
 }
 
-div {
-    margin: 20px;
-    padding: 20px;
+h2 {
+    text-align: center;
+    color: #000000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+input[type="text"], input[type="email"] {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-}
-
-form label, form input {
-    display: block;
-    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 button {
-    background-color: #4CAF50; /* Verde escuro */
+    background-color: #16aa36; 
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Adicionando uma transição suave de cor */
+    transition: background-color 0.05s;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #45a049; /* Tom mais claro de verde ao passar o mouse */
+    background-color: #10c838; 
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: style type;
+    padding: 0;
 }
 
 li {
     margin-bottom: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content:space-around;
+    align-items: first baseline;
 }
+
+.rounded-corners {
+    border-radius: 30px;
+}
+
+.box-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    padding: 20px;
+    position: relative;
+    color: #ffffff;
+}
+
+
+footer::after {
+
+    content: "\2764"; 
+    color: #ffffff; 
+    margin-right: 3px; 
+}
+
+a {
+    color: #ffffff;
+}
+
+
+

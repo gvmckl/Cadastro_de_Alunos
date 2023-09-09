@@ -1,51 +1,62 @@
-// JavaScript para manipular os dados e interatividade
 const form = document.getElementById('cadastro-form');
 const alunosList = document.getElementById('alunos-list');
+let alunoEmEdicao = null; 
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Obtenha os valores do formulário
     const nome = document.getElementById('nome').value;
     const periodo = document.getElementById('periodo').value;
     const matricula = document.getElementById('matricula').value;
     const email = document.getElementById('email').value;
 
-    // Crie um objeto para representar o aluno
-    const aluno = {
-        nome,
-        periodo,
-        matricula,
-        email
-    };
+    if (alunoEmEdicao === null) {
+       
+        const aluno = {
+            nome,
+            periodo,
+            matricula,
+            email
+        };
 
-    // Adicione o aluno ao array de alunos (simulando um banco de dados)
-    // Você pode usar uma classe para gerenciar isso
-    // Exemplo: const alunoManager = new AlunoManager();
-    // alunoManager.adicionarAluno(aluno);
-    alunos.push(aluno);
+        alunos.push(aluno);
+    } else {
+      
+        alunoEmEdicao.nome = nome;
+        alunoEmEdicao.periodo = periodo;
+        alunoEmEdicao.matricula = matricula;
+        alunoEmEdicao.email = email;
 
-    // Limpe o formulário
+       
+        alunoEmEdicao = null;
+    }
+
     form.reset();
-
-    // Atualize a lista de alunos
     atualizarListaAlunos();
 });
 
 function atualizarListaAlunos() {
-    // Limpe a lista de alunos
     alunosList.innerHTML = '';
 
-    // Percorra o array de alunos e crie elementos da lista
     for (const aluno of alunos) {
         const listItem = document.createElement('li');
         listItem.textContent = `Nome: ${aluno.nome}, Período: ${aluno.periodo}, Matrícula: ${aluno.matricula}, Email: ${aluno.email}`;
 
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Editar';
+        editButton.addEventListener('click', () => {
+           
+            document.getElementById('nome').value = aluno.nome;
+            document.getElementById('periodo').value = aluno.periodo;
+            document.getElementById('matricula').value = aluno.matricula;
+            document.getElementById('email').value = aluno.email;
+
+            alunoEmEdicao = aluno;
+        });
+
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Excluir';
         deleteButton.addEventListener('click', () => {
-            // Remova o aluno do array (simulando exclusão)
-            // Exemplo: alunoManager.excluirAluno(aluno);
             const index = alunos.indexOf(aluno);
             if (index !== -1) {
                 alunos.splice(index, 1);
@@ -53,13 +64,11 @@ function atualizarListaAlunos() {
             }
         });
 
+        listItem.appendChild(editButton);
         listItem.appendChild(deleteButton);
         alunosList.appendChild(listItem);
     }
 }
 
-// Array para armazenar os alunos (simulação de banco de dados)
 const alunos = [];
-
-// Inicialize a lista de alunos ao carregar a página
 atualizarListaAlunos();
